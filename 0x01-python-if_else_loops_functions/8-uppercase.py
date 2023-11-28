@@ -2,8 +2,9 @@
 def uppercase(str):
     print(
         "".join(
-            [chr(ord(s) - 32) for s in str if ord(s) > 96 and ord(s) < 123]
-        ).format(
-            ""
-        )  # NOTE: had to use '.format("")', project requirements :)
+            [
+                chr(ord(s) - 32) if ord(s) > 96 and ord(s) < 123 else s
+                for s in str
+            ]
+        ).format("")
     )
