@@ -1,0 +1,31 @@
+This module defines a function(`add_integer`) that add two integers and returns the result. If the arguments are not integers, it raises a `TypeError` exception.
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Test 01:
+>>> add_integer(1, 2)
+3
+
+Test 02:
+>>> add_integer(1, "2")
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+
+Test 03:
+>>> add_integer("1", 2)
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+Test 04:
+>>> add_integer(1.5, 2)
+3
+
+Test 05:
+>>> add_integer(1, 2.5)
+3
+
+Test 06:
+>>> add_integer(1.5, 2.5)
+3
