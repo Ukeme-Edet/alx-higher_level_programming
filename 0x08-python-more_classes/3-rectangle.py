@@ -22,6 +22,8 @@ A module that defines a class named Rectangle.
 - Public instance method: `def perimeter(self):` that returns the rectangle
     perimeter:
     - if `width` or `height` is equal to `0`, perimeter is equal to `0`
+- `print()` and `str()` should print the rectangle with the character `#`:
+    - if `width` or `height` is equal to 0, return an empty string
 """
 
 
@@ -86,3 +88,11 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return 0
         return (self.__width + self.__height) * 2
+
+    def __str__(self):
+        """
+        Returns a string representation of the rectangle with the # character.
+        """
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        return "\n".join(["#" * self.__width] * self.__height)
