@@ -35,6 +35,15 @@ A module that defines a class named Rectangle.
 - `repr()` should return a string representation of the rectangle to be able to
     recreate a new instance by using `eval()`
 - Print the message `Bye rectangle...` when an instance of Rectangle is deleted
+- Static method `def bigger_or_equal(rect_1, rect_2):` that returns the
+    biggest rectangle based on the area
+    - `rect_1` must be an instance of `Rectangle`, otherwise raise a
+        `TypeError` exception with the message `rect_1 must be an instance of
+        Rectangle`
+    - `rect_2` must be an instance of `Rectangle`, otherwise raise a
+        `TypeError` exception with the message `rect_2 must be an instance of
+        Rectangle`
+    - Returns `rect_1` if both have the same area value
 """
 
 
@@ -127,3 +136,14 @@ class Rectangle:
         """
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2) -> "Rectangle":
+        """
+        Returns the biggest rectangle based on the area.
+        """
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        return rect_1 if rect_1.area() >= rect_2.area() else rect_2
