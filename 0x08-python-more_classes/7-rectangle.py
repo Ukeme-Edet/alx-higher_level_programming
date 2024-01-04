@@ -20,6 +20,10 @@ A module that defines a class named Rectangle.
     - Initialized to `0`
     - Incremented during each new instance instantiation
     - Decremented during each instance deletion
+- Public class attribute `print_symbol`:
+    - Initialized to `#`
+    - Used as symbol for string representation
+    - Can be any type
 - Instantiation with optional `width` and `height`:
     `def __init__(self, width=0, height=0):`
 - Public instance method: `def area(self):` that returns the rectangle area
@@ -40,6 +44,7 @@ class Rectangle:
     """
 
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0) -> None:
         """
@@ -105,7 +110,9 @@ class Rectangle:
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-        return "\n".join(["#" * self.__width] * self.__height)
+        return "\n".join(
+            [str(self.print_symbol) * self.__width] * self.__height
+        )
 
     def __repr__(self) -> str:
         """
