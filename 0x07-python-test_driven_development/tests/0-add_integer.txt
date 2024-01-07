@@ -1,4 +1,4 @@
-This module defines a function(`add_integer`) that add two integers and returns the result. If the arguments are not integers, it raises a `TypeError` exception.
+The test suite for the 0-add_integer.py module
 
 >>> add_integer = __import__('0-add_integer').add_integer
 

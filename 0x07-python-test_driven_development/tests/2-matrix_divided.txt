@@ -1,4 +1,4 @@
-This module defines a function (`matrix_divided`) that takes in two arguments, a matrix and the value to be divided by.
+The test suite for the 2-matrix_divided module
 
 >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 

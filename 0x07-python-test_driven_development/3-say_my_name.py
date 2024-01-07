@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This module defines a function (`say_my_name`) that prints 'My name is <first name> <last name>'
+This module defines a function (`say_my_name`) that prints 'My name is
+<first name> <last name>'
 """
 
 

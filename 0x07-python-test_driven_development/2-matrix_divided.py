@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-This module defines a function (`matrix_divided`) that takes two arguments, a matrix and the value to be divided by 
+This module defines a function (`matrix_divided`) that takes two arguments, a
+matrix and a divisor, and returns the result of the division of all elements of
+the matrix by the divisor.
 """
 
 
@@ -13,7 +15,8 @@ def matrix_divided(matrix, div):
     Returns:
         The result of the division
     Raises:
-        TypeError: If matrix is not a list of lists of integers/floats or if div is not an integer/float
+        TypeError: If matrix is not a list of lists of integers/floats or if
+        div is not an integer/float
         ZeroDivisionError: If div is 0
     """
     if not all(

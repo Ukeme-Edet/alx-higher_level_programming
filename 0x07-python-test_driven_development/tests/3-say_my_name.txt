@@ -1,4 +1,4 @@
-This Contains a test suit for the 3-say_my_name.py file
+The test suite for the 3-say_my_name.py module
 
 >>> say_my_name = __import__('3-say_my_name').say_my_name
 
