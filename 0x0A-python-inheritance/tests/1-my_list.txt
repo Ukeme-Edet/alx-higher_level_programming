@@ -1,67 +1,30 @@
-The test suite for the '1-my_list.py' file
+===========================
+Test to 1-my_list - module
+***************************
 
->>> MyList = __import__('1-my_list').MyList
+import:
+>>> MyList = __import__("1-my_list").MyList
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
 
-Test 01:
-	>>> my_list = MyList("ukeme")
-	>>> my_list
-	['u', 'k', 'e', 'm', 'e']
-	>>> my_list.print_sorted()
-	['e', 'e', 'k', 'm', 'u']
+>>> print(my_list)
+[1, 4, 2, 3, 5]
 
-Test 02:
-	>>> my_list = MyList()
-	>>> my_list.append(1)
-	>>> my_list
-	[1]
-	>>> my_list.append(2)
-	>>> my_list
-	[1, 2]
+>>> my_list = MyList("hello")
 
-Test 03:
-	>>> my_list.pop()
-	2
+>>> my_list
+['h', 'e', 'l', 'l', 'o']
 
-Test 04:
-	>>> my_list
-	[1]
+>>> my_list.print_sorted()
+['e', 'h', 'l', 'l', 'o']
 
-Test 05:
-	>>> my_list.append(20)
-	>>> my_list.append(10)
-	>>> my_list.append(40)
-	>>> my_list.append(30)
-	>>> my_list
-	[1, 20, 10, 40, 30]
+>>> my_list = MyList()
 
-Test 06:
-	>>> my_list.print_sorted()
-	[1, 10, 20, 30, 40]
-
-Test 07:
-	>>> my_list = MyList()
-	>>> my_list.print_sorted()
-	[]
-
-Test 08:
-	>>> my_list = MyList([1, 2, 3, 4, 5])
-	>>> my_list.print_sorted()
-	[1, 2, 3, 4, 5]
-
-Test 09:
-	>>> my_list = MyList([1, 2, 3, 4, 5])
-	>>> my_list.append(6)
-	>>> my_list.print_sorted()
-	[1, 2, 3, 4, 5, 6]
-	
-Test 10:
-	>>> my_list = MyList([1, 2, 3, 4, 5])
-	>>> my_list.append(6)
-	>>> my_list.append(7)
-	>>> my_list.append(8)
-	>>> my_list.append(9)
-	>>> my_list.append(10)
-	>>> my_list.print_sorted()
-	[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-	>>> print(my_list)
-	[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+>>> my_list.print_sorted()
+[]
