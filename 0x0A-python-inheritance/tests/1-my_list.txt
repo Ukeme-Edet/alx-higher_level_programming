@@ -1,0 +1,60 @@
+The test suite for the '1-my_list.py' file
+
+>>> MyList = __import__('1-my_list').MyList
+
+Test 01:
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list
+	[1]
+
+Test 02:
+	>>> my_list.append(2)
+	>>> my_list
+	[1, 2]
+
+Test 03:
+	>>> my_list.pop()
+	2
+
+Test 04:
+	>>> my_list
+	[1]
+
+Test 05:
+	>>> my_list.append(20)
+	>>> my_list.append(10)
+	>>> my_list.append(40)
+	>>> my_list.append(30)
+	>>> my_list
+	[1, 20, 10, 40, 30]
+
+Test 06:
+	>>> my_list.print_sorted()
+	[1, 10, 20, 30, 40]
+
+Test 07:
+	>>> my_list = MyList([])
+	>>> my_list.print_sorted()
+	[]
+
+Test 08:
+	>>> my_list = MyList([1, 2, 3, 4, 5])
+	>>> my_list.print_sorted()
+	[1, 2, 3, 4, 5]
+
+Test 09:
+	>>> my_list = MyList([1, 2, 3, 4, 5])
+	>>> my_list.append(6)
+	>>> my_list.print_sorted()
+	[1, 2, 3, 4, 5, 6]
+	
+Test 10:
+	>>> my_list = MyList([1, 2, 3, 4, 5])
+	>>> my_list.append(6)
+	>>> my_list.append(7)
+	>>> my_list.append(8)
+	>>> my_list.append(9)
+	>>> my_list.append(10)
+	>>> my_list.print_sorted()
+	[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
