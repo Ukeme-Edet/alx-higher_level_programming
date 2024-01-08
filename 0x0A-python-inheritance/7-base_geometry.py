@@ -29,5 +29,5 @@ class BaseGeometry:
         """
         if type(value) != int:
             raise TypeError(f"{name} must be an integer")
-        if value < 1:
+        if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
