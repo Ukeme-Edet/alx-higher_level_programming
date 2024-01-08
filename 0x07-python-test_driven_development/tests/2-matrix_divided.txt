@@ -34,3 +34,15 @@ Test 06:
 	>>> old_matrix = [[1, 2, 3], [4, 5, 6]]
 	>>> old_matrix is matrix_divided(old_matrix, 3)
 	False
+
+Test 07:
+	>>> matrix_divided([], 2)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test 08:
+	>>> matrix_divided([[1, 2, 3], [4, 5, 6]])
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_divided() missing 1 required positional argument: 'div'

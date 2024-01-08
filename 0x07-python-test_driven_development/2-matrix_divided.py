@@ -19,11 +19,14 @@ def matrix_divided(matrix, div):
         div is not an integer/float
         ZeroDivisionError: If div is 0
     """
-    if not all(
-        [
-            all([isinstance(x, int) or isinstance(x, float) for x in row])
-            for row in matrix
-        ]
+    if not (
+        matrix
+        and all(
+            [
+                all([isinstance(x, int) or isinstance(x, float) for x in row])
+                for row in matrix
+            ]
+        )
     ):
         raise TypeError(
             "matrix must be a matrix (list of lists) of integers/floats"
