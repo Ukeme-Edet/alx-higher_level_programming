@@ -3,6 +3,11 @@ The test suite for the '1-my_list.py' file
 >>> MyList = __import__('1-my_list').MyList
 
 Test 01:
+	>>> my_list = MyList("ukeme")
+	>>> my_list
+	['u', 'k', 'e', 'm', 'e']
+	>>> my_list.print_sorted()
+	['e', 'e', 'k', 'm', 'u']
 	>>> my_list = MyList()
 	>>> my_list.append(1)
 	>>> my_list
