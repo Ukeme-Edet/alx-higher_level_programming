@@ -8,12 +8,12 @@ Test 01:
 	['u', 'k', 'e', 'm', 'e']
 	>>> my_list.print_sorted()
 	['e', 'e', 'k', 'm', 'u']
+
+Test 02:
 	>>> my_list = MyList()
 	>>> my_list.append(1)
 	>>> my_list
 	[1]
-
-Test 02:
 	>>> my_list.append(2)
 	>>> my_list
 	[1, 2]
@@ -39,7 +39,7 @@ Test 06:
 	[1, 10, 20, 30, 40]
 
 Test 07:
-	>>> my_list = MyList([])
+	>>> my_list = MyList()
 	>>> my_list.print_sorted()
 	[]
 
@@ -62,4 +62,6 @@ Test 10:
 	>>> my_list.append(9)
 	>>> my_list.append(10)
 	>>> my_list.print_sorted()
+	[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+	>>> print(my_list)
 	[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
