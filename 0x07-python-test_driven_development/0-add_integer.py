@@ -14,12 +14,9 @@ def add_integer(a, b=98):
         The addition of the two integers.
     Raises:
         TypeError: If a or b are not integers or floats.
-        OverflowError: If a or b are float infinity.
     """
-    if not (isinstance(a, int) or isinstance(a, float)):
+    if type(a) not in [int, float]:
         raise TypeError("a must be an integer")
-    if not (isinstance(b, int) or isinstance(b, float)):
+    if type(b) not in [int, float]:
         raise TypeError("b must be an integer")
-    if abs(a) == float("inf") or abs(b) == float("inf"):
-        raise OverflowError("cannot convert float infinity to integer")
     return int(a) + int(b)
