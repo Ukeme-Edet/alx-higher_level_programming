@@ -20,7 +20,8 @@ def matrix_divided(matrix, div):
         ZeroDivisionError: If div is 0
     """
     if not (
-        matrix
+        isinstance(matrix, list)
+        and matrix
         and all(
             [
                 all([isinstance(x, int) or isinstance(x, float) for x in row])
