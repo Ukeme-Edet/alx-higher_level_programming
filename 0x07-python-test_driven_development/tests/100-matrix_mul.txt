@@ -87,3 +87,31 @@ Test 15:
 	Traceback (most recent call last):
 	...
 	ValueError: m_a and m_b can't be multiplied
+
+Test 16:
+	>>> matrix_mul(None, None)
+	Traceback (most recent call last):
+	...
+	TypeError: m_a must be a list
+
+Test 17:
+	>>> matrix_mul(None, [[1, 2], [3, 4]])
+	Traceback (most recent call last):
+	...
+	TypeError: m_a must be a list
+
+Test 18:
+	>>> matrix_mul([[1, 2], [3, 4]], None)
+	Traceback (most recent call last):
+	...
+	TypeError: m_b must be a list
+
+Test 19:
+	>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]], [[1, 2], [3, 4]])
+	Traceback (most recent call last):
+	...
+	TypeError: matrix_mul() takes 2 positional arguments but 3 were given
+
+Test 20:
+	>>> matrix_mul([[2, float('nan')], [3, 4]], [[1, 2], [3, 4]])
+	[[nan, nan], [15, 22]]
