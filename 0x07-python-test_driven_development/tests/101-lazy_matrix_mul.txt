@@ -1,0 +1,90 @@
+The test suite for the 101-lazy_matrix_mul module
+
+>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+Test 01:
+	>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+	array([[ 7, 10],
+	       [15, 22]])
+
+Test 02:
+	>>> lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+	array([[13, 16]])
+
+Test 03:
+	>>> lazy_matrix_mul("lol", "cap")
+	Traceback (most recent call last):
+	...
+	TypeError: m_a must be a list
+
+Test 04:
+	>>> lazy_matrix_mul([[1, 2]], "cap")
+	Traceback (most recent call last):
+	...
+	TypeError: m_b must be a list
+
+Test 05:
+	>>> lazy_matrix_mul(["lol"], ["cap"])
+	Traceback (most recent call last):
+	...
+	TypeError: m_a must be a list of lists
+
+Test 06:
+	>>> lazy_matrix_mul([[1, 2]], ["cap"])
+	Traceback (most recent call last):
+	...
+	TypeError: m_b must be a list of lists
+
+Test 07:
+	>>> lazy_matrix_mul([], [])
+	Traceback (most recent call last):
+	...
+	ValueError: m_a can't be empty
+
+Test 08:
+	>>> lazy_matrix_mul([[1, 2]], [])
+	Traceback (most recent call last):
+	...
+	ValueError: m_b can't be empty
+
+Test 09:
+	>>> lazy_matrix_mul([[]], [[]])
+	Traceback (most recent call last):
+	...
+	ValueError: m_a can't be empty
+
+Test 10:
+	>>> lazy_matrix_mul([[1, 2]], [[]])
+	Traceback (most recent call last):
+	...
+	ValueError: m_b can't be empty
+
+Test 11:
+	>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], ["3", 4]])
+	Traceback (most recent call last):
+	...
+	TypeError: m_b should contain only integers or floats
+
+Test 12:
+	>>> lazy_matrix_mul([[1, 2], ["3", 4]], [[1, 2], [3, 4]])
+	Traceback (most recent call last):
+	...
+	TypeError: m_a should contain only integers or floats
+
+Test 13:
+	>>> lazy_matrix_mul([[1, 2], [3, 4, 5]], [[1, 2], [3, 4]])
+	Traceback (most recent call last):
+	...
+	TypeError: each row of m_a must be of the same size
+
+Test 14:
+	>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4, 5]])
+	Traceback (most recent call last):
+	...
+	TypeError: each row of m_b must be of the same size
+
+Test 15:
+	>>> lazy_matrix_mul([[1, 2, 3], [4, 5, 6]], [[1, 2], [3, 4]])
+	Traceback (most recent call last):
+	...
+	ValueError: m_a and m_b can't be multiplied
