@@ -21,3 +21,4 @@ class MyInt(int):
         Returns the opposite of the inequality comparison
         """
         return super().__eq__(other)
+    
