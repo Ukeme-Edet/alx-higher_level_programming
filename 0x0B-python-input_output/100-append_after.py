@@ -10,12 +10,10 @@ def append_after(filename="", search_string="", new_string=""):
     Inserts a line of text to a file, after each line containing a specific
     string
     """
-    with open(filename, mode="r+", encoding="utf-8") as f:
-        lines = f.readlines()
-        i = 0
-        for line in lines:
+    with open(filename, "r+") as f:
+        text = f.readlines()
+        for i, line in enumerate(text):
             if search_string in line:
-                lines.insert(i + 1, new_string)
-            i += 1
+                text.insert(i + 1, new_string)
         f.seek(0)
-        f.writelines(lines)
+        f.writelines(text)
