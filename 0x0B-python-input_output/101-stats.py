@@ -24,7 +24,7 @@ try:
             status_codes[words[-2]] += 1
             if i % 10 == 0:
                 print_stats()
-        except:
+        except Exception:
             pass
     print_stats()
 except KeyboardInterrupt:
