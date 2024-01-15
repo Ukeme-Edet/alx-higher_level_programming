@@ -4,6 +4,8 @@ Rectangle class
 - Inherited from Base
 - Private instance attributes: width, height, x, y
 - Getter and setter for each private attribute
+- __init__ method
+- area method
 """
 from models.base import Base
 
@@ -74,3 +76,7 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """Return area of Rectangle"""
+        return self.height * self.width

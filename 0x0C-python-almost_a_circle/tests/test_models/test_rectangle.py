@@ -15,7 +15,7 @@ class TestRectangle(unittest.TestCase):
     def test_id(self):
         """Test id attribute"""
         r1 = Rectangle(10, 2)
-        self.assertEqual(r1.id, 18)
+        self.assertEqual(r1.id, 20)
 
     def test_width(self):
         """Test width attribute"""
@@ -180,6 +180,15 @@ class TestRectangle(unittest.TestCase):
             Rectangle(10, 2, 3, -4)
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Rectangle(10, 2, 3, -4, 5)
+
+    def test_area(self):
+        """Test area method"""
+        r1 = Rectangle(3, 2)
+        self.assertEqual(r1.area(), 6)
+        r2 = Rectangle(2, 10)
+        self.assertEqual(r2.area(), 20)
+        r3 = Rectangle(8, 7, 0, 0, 12)
+        self.assertEqual(r3.area(), 56)
 
 
 if __name__ == "__main__":
