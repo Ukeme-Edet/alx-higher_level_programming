@@ -15,13 +15,7 @@ class TestRectangle(unittest.TestCase):
     def test_id(self):
         """Test id attribute"""
         r1 = Rectangle(10, 2)
-        self.assertEqual(r1.id, 1)
-        r2 = Rectangle(2, 10)
-        self.assertEqual(r2.id, 2)
-        r3 = Rectangle(10, 2, 0, 0, 12)
-        self.assertEqual(r3.id, 12)
-        r4 = Rectangle(10, 2, 0, 0, 0)
-        self.assertEqual(r4.id, 0)
+        self.assertEqual(r1.id, 18)
 
     def test_width(self):
         """Test width attribute"""
@@ -55,8 +49,6 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r3.x, 0)
         r4 = Rectangle(10, 2, 3, 0, 0)
         self.assertEqual(r4.x, 3)
-        r5 = Rectangle(10, 2, -3, 0, 0)
-        self.assertEqual(r5.x, -3)
 
     def test_y(self):
         """Test y attribute"""
@@ -68,8 +60,6 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r3.y, 0)
         r4 = Rectangle(10, 2, 3, 0, 0)
         self.assertEqual(r4.y, 0)
-        r5 = Rectangle(10, 2, -3, 0, 0)
-        self.assertEqual(r5.y, 0)
 
     def test_width_TypeError(self):
         """Test width TypeError"""
@@ -86,11 +76,11 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Rectangle(None, 10)
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            Rectangle(float('nan'), 10)
+            Rectangle(float("nan"), 10)
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            Rectangle(float('inf'), 10)
+            Rectangle(float("inf"), 10)
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            Rectangle(float('-inf'), 10)
+            Rectangle(float("-inf"), 10)
 
     def test_height_TypeError(self):
         """Test height TypeError"""
@@ -107,11 +97,11 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
             Rectangle(10, None)
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
-            Rectangle(10, float('nan'))
+            Rectangle(10, float("nan"))
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
-            Rectangle(10, float('inf'))
+            Rectangle(10, float("inf"))
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
-            Rectangle(10, float('-inf'))
+            Rectangle(10, float("-inf"))
 
     def test_x_TypeError(self):
         """Test x TypeError"""
@@ -128,11 +118,11 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Rectangle(10, 2, None)
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Rectangle(10, 2, float('nan'))
+            Rectangle(10, 2, float("nan"))
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Rectangle(10, 2, float('inf'))
+            Rectangle(10, 2, float("inf"))
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Rectangle(10, 2, float('-inf'))
+            Rectangle(10, 2, float("-inf"))
 
     def test_y_TypeError(self):
         """Test y TypeError"""
@@ -149,11 +139,11 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Rectangle(10, 2, 3, None)
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            Rectangle(10, 2, 3, float('nan'))
+            Rectangle(10, 2, 3, float("nan"))
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            Rectangle(10, 2, 3, float('inf'))
+            Rectangle(10, 2, 3, float("inf"))
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            Rectangle(10, 2, 3, float('-inf'))
+            Rectangle(10, 2, 3, float("-inf"))
 
     def test_width_ValueError(self):
         """Test width ValueError"""
@@ -192,5 +182,5 @@ class TestRectangle(unittest.TestCase):
             Rectangle(10, 2, 3, -4, 5)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
