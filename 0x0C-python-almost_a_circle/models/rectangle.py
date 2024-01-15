@@ -1,5 +1,10 @@
 #!/usr/bin/python3
-"""The Rectangle class"""
+"""
+Rectangle class
+- Inherited from Base
+- Private instance attributes: width, height, x, y
+- Getter and setter for each private attribute
+"""
 from models.base import Base
 
 
