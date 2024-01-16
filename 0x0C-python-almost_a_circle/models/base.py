@@ -16,8 +16,7 @@ class Base:
             self.id = id
 
     def to_json_string(list_dictionaries):
-        """Returns JSON string representation of list_dictionaries"""
+        """Return JSON string representation of list_dictionaries"""
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
-        else:
-            return json.dumps(list_dictionaries)
+        return json.dumps(list_dictionaries)
