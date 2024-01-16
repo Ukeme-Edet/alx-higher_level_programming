@@ -57,6 +57,26 @@ class TestBase(unittest.TestCase):
         self.assertFalse(s1 is s2)
         self.assertFalse(s1 == s2)
 
+    def test_load_from_file(self):
+        """Test load_from_file method"""
+        s1 = Square(1, 2, 3, 4)
+        s2 = Square(5, 6, 7, 8)
+        list_squares_input = [s1, s2]
+        Square.save_to_file(list_squares_input)
+        list_squares_output = Square.load_from_file()
+        self.assertEqual(
+            list_squares_input[0].__str__(), "[Square] (4) 2/3 - 1"
+        )
+        self.assertEqual(
+            list_squares_input[1].__str__(), "[Square] (8) 6/7 - 5"
+        )
+        self.assertEqual(
+            list_squares_output[0].__str__(), "[Square] (4) 2/3 - 1"
+        )
+        self.assertEqual(
+            list_squares_output[1].__str__(), "[Square] (8) 6/7 - 5"
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
