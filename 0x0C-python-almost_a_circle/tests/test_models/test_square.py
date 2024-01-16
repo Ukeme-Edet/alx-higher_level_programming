@@ -77,3 +77,23 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s1.__str__(), "[Square] (12) 2/1 - 4")
         s2 = Square(5, 1, 0, 0)
         self.assertEqual(s2.__str__(), "[Square] (0) 1/0 - 5")
+
+    def test_update(self):
+        """Test update method"""
+        s1 = Square(10, 10, 10, 10)
+        s1.update(89)
+        self.assertEqual(s1.__str__(), "[Square] (89) 10/10 - 10")
+        s1.update(89, 2)
+        self.assertEqual(s1.__str__(), "[Square] (89) 10/10 - 2")
+        s1.update(89, 2, 3)
+        self.assertEqual(s1.__str__(), "[Square] (89) 3/10 - 2")
+        s1.update(89, 2, 3, 4)
+        self.assertEqual(s1.__str__(), "[Square] (89) 3/4 - 2")
+        s1.update(x=12)
+        self.assertEqual(s1.__str__(), "[Square] (89) 12/4 - 2")
+        s1.update(size=7, y=1)
+        self.assertEqual(s1.__str__(), "[Square] (89) 12/1 - 7")
+        s1.update(size=7, id=89, y=1)
+        self.assertEqual(s1.__str__(), "[Square] (89) 12/1 - 7")
+        s1.update(x=1, size=7, id=89, y=1)
+        self.assertEqual(s1.__str__(), "[Square] (89) 1/1 - 7")
