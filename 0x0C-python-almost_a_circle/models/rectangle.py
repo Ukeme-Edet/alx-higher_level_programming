@@ -6,6 +6,8 @@ Rectangle class
 - Getter and setter for each private attribute
 - __init__ method
 - area method
+- display method
+- __str__ method
 """
 from models.base import Base
 
@@ -83,8 +85,10 @@ class Rectangle(Base):
 
     def display(self):
         """Print Rectangle with #"""
-        for i in range(self.height):
-            print("#" * self.width)
+        for _ in range(self.y):
+            print()
+        for _ in range(self.height):
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         """Return string representation of Rectangle"""
