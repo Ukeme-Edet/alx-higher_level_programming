@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-from models.rectangle import Rectangle
-
 """
 Square class
 - Inherited from Rectangle
@@ -10,6 +8,7 @@ Square class
     - Initialize size using super() with width and height
 - __str__ method
 """
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
