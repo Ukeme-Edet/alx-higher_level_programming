@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Base class"""
 import json
+import csv
 
 
 class Base:
@@ -68,3 +69,26 @@ class Base:
                 ]
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Write CSV representation of list_objs to a file"""
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w", newline="") as f:
+            if list_objs is None or list_objs == []:
+                f.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = [
+                        "id", "width", "height", "x", "y"
+                    ]
+                elif cls.__name__ == "Square":
+                    fieldnames = [
+                        "id", "size", "x", "y"
+                    ]
+                writer = csv.DictWriter(
+                    f, fieldnames=fieldnames
+                )
+                writer.writeheader()
+                for obj in list_objs:
+                    writer.writerow(obj.to_dictionary())

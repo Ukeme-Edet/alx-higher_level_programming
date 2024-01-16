@@ -77,6 +77,18 @@ class TestBase(unittest.TestCase):
             list_squares_output[1].__str__(), "[Square] (8) 6/7 - 5"
         )
 
+    def test_save_to_file_csv(self):
+        """Test save_to_file_csv method"""
+        Square.save_to_file_csv(None)
+        with open("Square.csv", "r") as file:
+            self.assertEqual(file.read(), "[]")
+        Square.save_to_file_csv([])
+        with open("Square.csv", "r") as file:
+            self.assertEqual(file.read(), "[]")
+        Square.save_to_file_csv([Square(1, 2)])
+        with open("Square.csv", "r") as file:
+            self.assertEqual(file.read(), "id,size,x,y\n1,1,2,0\n")
+
 
 if __name__ == "__main__":
     unittest.main()
