@@ -208,6 +208,20 @@ class TestRectangle(unittest.TestCase):
         r3 = Rectangle(5, 5)
         self.assertEqual(r3.__str__(), "[Rectangle] (25) 0/0 - 5/5")
 
+    def test_update(self):
+        """Test update method"""
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89)
+        self.assertEqual(r1.__str__(), "[Rectangle] (89) 10/10 - 10/10")
+        r1.update(89, 2)
+        self.assertEqual(r1.__str__(), "[Rectangle] (89) 10/10 - 2/10")
+        r1.update(89, 2, 3)
+        self.assertEqual(r1.__str__(), "[Rectangle] (89) 10/10 - 2/3")
+        r1.update(89, 2, 3, 4)
+        self.assertEqual(r1.__str__(), "[Rectangle] (89) 4/10 - 2/3")
+        r1.update(89, 2, 3, 4, 5)
+        self.assertEqual(r1.__str__(), "[Rectangle] (89) 4/5 - 2/3")
+
 
 if __name__ == "__main__":
     unittest.main()
