@@ -76,19 +76,12 @@ class Base:
         filename = cls.__name__ + ".csv"
         with open(filename, "w", newline="") as f:
             if list_objs is None or list_objs == []:
-                f.write("[]")
+                f.write("")
             else:
                 if cls.__name__ == "Rectangle":
-                    fieldnames = [
-                        "id", "width", "height", "x", "y"
-                    ]
+                    fieldnames = ["id", "width", "height", "x", "y"]
                 elif cls.__name__ == "Square":
-                    fieldnames = [
-                        "id", "size", "x", "y"
-                    ]
-                writer = csv.DictWriter(
-                    f, fieldnames=fieldnames
-                )
-                writer.writeheader()
+                    fieldnames = ["id", "size", "x", "y"]
+                writer = csv.DictWriter(f, fieldnames=fieldnames)
                 for obj in list_objs:
                     writer.writerow(obj.to_dictionary())

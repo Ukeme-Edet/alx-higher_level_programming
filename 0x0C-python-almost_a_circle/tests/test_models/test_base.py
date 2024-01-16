@@ -81,13 +81,13 @@ class TestBase(unittest.TestCase):
         """Test save_to_file_csv method"""
         Square.save_to_file_csv(None)
         with open("Square.csv", "r") as file:
-            self.assertEqual(file.read(), "[]")
+            self.assertEqual(file.read(), "")
         Square.save_to_file_csv([])
         with open("Square.csv", "r") as file:
-            self.assertEqual(file.read(), "[]")
+            self.assertEqual(file.read(), "")
         Square.save_to_file_csv([Square(1, 2)])
         with open("Square.csv", "r") as file:
-            self.assertEqual(file.read(), "id,size,x,y\n1,1,2,0\n")
+            self.assertEqual(file.read(), "1,1,2,0\n")
 
 
 if __name__ == "__main__":
