@@ -37,3 +37,11 @@ class Base:
                         [obj.to_dictionary() for obj in list_objs]
                     )
                 )
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Return list of JSON representation"""
+        if json_string is None or json_string == "[]":
+            return []
+        else:
+            return json.loads(json_string)

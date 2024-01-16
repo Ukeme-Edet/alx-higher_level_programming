@@ -37,7 +37,15 @@ class TestBase(unittest.TestCase):
             self.assertEqual(file.read(), "[]")
         Square.save_to_file([Square(1, 2)])
         with open("Square.json", "r") as file:
-            self.assertEqual(file.read(), '[{"id": 1, "size": 1, "x": 2, "y": 0}]')
+            self.assertEqual(
+                file.read(), '[{"id": 1, "size": 1, "x": 2, "y": 0}]'
+            )
+
+    def test_from_json_string(self):
+        """Test from_json_string method"""
+        self.assertEqual(Square.from_json_string(None), [])
+        self.assertEqual(Square.from_json_string("[]"), [])
+        self.assertEqual(Square.from_json_string('[{"id": 1}]'), [{"id": 1}])
 
 
 if __name__ == "__main__":
