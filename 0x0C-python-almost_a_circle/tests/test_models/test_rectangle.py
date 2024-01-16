@@ -15,7 +15,7 @@ class TestRectangle(unittest.TestCase):
     def test_id(self):
         """Test id attribute"""
         r1 = Rectangle(10, 2)
-        self.assertEqual(r1.id, 20)
+        self.assertEqual(r1.id, 23)
 
     def test_width(self):
         """Test width attribute"""
@@ -189,6 +189,15 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r2.area(), 20)
         r3 = Rectangle(8, 7, 0, 0, 12)
         self.assertEqual(r3.area(), 56)
+
+    def test_display(self):
+        """Test display method"""
+        r1 = Rectangle(4, 6)
+        self.assertEqual(r1.display(), None)
+        r2 = Rectangle(2, 2)
+        self.assertEqual(r2.display(), None)
+        r3 = Rectangle(2, 3, 2, 2)
+        self.assertEqual(r3.display(), None)
 
 
 if __name__ == "__main__":
