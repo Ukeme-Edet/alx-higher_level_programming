@@ -14,7 +14,7 @@ class TestSquare(unittest.TestCase):
     def test_id(self):
         """Test id attribute"""
         s1 = Square(10)
-        self.assertEqual(s1.id, 75)
+        self.assertEqual(s1.id, 73)
 
     def test_size(self):
         """Test size attribute"""
@@ -102,14 +102,14 @@ class TestSquare(unittest.TestCase):
         """Test to_dictionary method"""
         s1 = Square(10, 2, 1)
         self.assertEqual(s1.to_dictionary(), {
-            "id": 78,
+            "id": 76,
             "size": 10,
             "x": 2,
             "y": 1
         })
         s2 = Square(1, 1)
         self.assertEqual(s2.to_dictionary(), {
-            "id": 79,
+            "id": 77,
             "size": 1,
             "x": 1,
             "y": 0

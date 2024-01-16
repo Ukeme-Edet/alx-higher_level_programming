@@ -14,7 +14,7 @@ class TestRectangle(unittest.TestCase):
     def test_id(self):
         """Test id attribute"""
         r1 = Rectangle(10, 2)
-        self.assertEqual(r1.id, 23)
+        self.assertEqual(r1.id, 21)
 
     def test_width(self):
         """Test width attribute"""
@@ -203,9 +203,9 @@ class TestRectangle(unittest.TestCase):
         r1 = Rectangle(4, 6, 2, 1, 12)
         self.assertEqual(r1.__str__(), "[Rectangle] (12) 2/1 - 4/6")
         r2 = Rectangle(5, 5, 1)
-        self.assertEqual(r2.__str__(), "[Rectangle] (24) 1/0 - 5/5")
+        self.assertEqual(r2.__str__(), "[Rectangle] (22) 1/0 - 5/5")
         r3 = Rectangle(5, 5)
-        self.assertEqual(r3.__str__(), "[Rectangle] (25) 0/0 - 5/5")
+        self.assertEqual(r3.__str__(), "[Rectangle] (23) 0/0 - 5/5")
 
     def test_update(self):
         """Test update method"""
@@ -226,22 +226,22 @@ class TestRectangle(unittest.TestCase):
         r1 = Rectangle(10, 2, 1, 9)
         self.assertEqual(
             r1.to_dictionary(),
-            {"x": 1, "y": 9, "id": 26, "height": 2, "width": 10},
+            {"x": 1, "y": 9, "id": 24, "height": 2, "width": 10},
         )
         r2 = Rectangle(1, 1)
         self.assertEqual(
             r2.to_dictionary(),
-            {"x": 0, "y": 0, "id": 27, "height": 1, "width": 1},
+            {"x": 0, "y": 0, "id": 25, "height": 1, "width": 1},
         )
         r3 = Rectangle(1, 1, 1)
         self.assertEqual(
             r3.to_dictionary(),
-            {"x": 1, "y": 0, "id": 28, "height": 1, "width": 1},
+            {"x": 1, "y": 0, "id": 26, "height": 1, "width": 1},
         )
         r4 = Rectangle(1, 1, 1, 1)
         self.assertEqual(
             r4.to_dictionary(),
-            {"x": 1, "y": 1, "id": 29, "height": 1, "width": 1},
+            {"x": 1, "y": 1, "id": 27, "height": 1, "width": 1},
         )
         r5 = Rectangle(1, 1, 1, 1, 1)
         self.assertEqual(
