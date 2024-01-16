@@ -47,6 +47,16 @@ class TestBase(unittest.TestCase):
         self.assertEqual(Square.from_json_string("[]"), [])
         self.assertEqual(Square.from_json_string('[{"id": 1}]'), [{"id": 1}])
 
+    def test_create(self):
+        """Test create method"""
+        s1 = Square(1, 2, 3, 4)
+        s1_dictionary = s1.to_dictionary()
+        s2 = Square.create(**s1_dictionary)
+        self.assertEqual(s1.__str__(), "[Square] (4) 2/3 - 1")
+        self.assertEqual(s2.__str__(), "[Square] (4) 2/3 - 1")
+        self.assertFalse(s1 is s2)
+        self.assertFalse(s1 == s2)
+
 
 if __name__ == "__main__":
     unittest.main()
