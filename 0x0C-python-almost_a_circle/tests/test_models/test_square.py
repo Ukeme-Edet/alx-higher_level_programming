@@ -14,7 +14,7 @@ class TestSquare(unittest.TestCase):
     def test_id(self):
         """Test id attribute"""
         s1 = Square(10)
-        self.assertEqual(s1.id, 71)
+        self.assertEqual(s1.id, 75)
 
     def test_size(self):
         """Test size attribute"""

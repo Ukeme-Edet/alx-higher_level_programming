@@ -221,6 +221,34 @@ class TestRectangle(unittest.TestCase):
         r1.update(89, 2, 3, 4, 5)
         self.assertEqual(r1.__str__(), "[Rectangle] (89) 4/5 - 2/3")
 
+    def test_to_dictionary(self):
+        """Test to_dictionary method"""
+        r1 = Rectangle(10, 2, 1, 9)
+        self.assertEqual(
+            r1.to_dictionary(),
+            {"x": 1, "y": 9, "id": 26, "height": 2, "width": 10},
+        )
+        r2 = Rectangle(1, 1)
+        self.assertEqual(
+            r2.to_dictionary(),
+            {"x": 0, "y": 0, "id": 27, "height": 1, "width": 1},
+        )
+        r3 = Rectangle(1, 1, 1)
+        self.assertEqual(
+            r3.to_dictionary(),
+            {"x": 1, "y": 0, "id": 28, "height": 1, "width": 1},
+        )
+        r4 = Rectangle(1, 1, 1, 1)
+        self.assertEqual(
+            r4.to_dictionary(),
+            {"x": 1, "y": 1, "id": 29, "height": 1, "width": 1},
+        )
+        r5 = Rectangle(1, 1, 1, 1, 1)
+        self.assertEqual(
+            r5.to_dictionary(),
+            {"x": 1, "y": 1, "id": 1, "height": 1, "width": 1},
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
