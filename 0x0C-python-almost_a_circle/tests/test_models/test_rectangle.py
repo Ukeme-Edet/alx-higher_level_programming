@@ -199,6 +199,15 @@ class TestRectangle(unittest.TestCase):
         r3 = Rectangle(2, 3, 2, 2)
         self.assertEqual(r3.display(), None)
 
+    def test_str(self):
+        """Test __str__ method"""
+        r1 = Rectangle(4, 6, 2, 1, 12)
+        self.assertEqual(r1.__str__(), "[Rectangle] (12) 2/1 - 4/6")
+        r2 = Rectangle(5, 5, 1)
+        self.assertEqual(r2.__str__(), "[Rectangle] (24) 1/0 - 5/5")
+        r3 = Rectangle(5, 5)
+        self.assertEqual(r3.__str__(), "[Rectangle] (25) 0/0 - 5/5")
+
 
 if __name__ == "__main__":
     unittest.main()
