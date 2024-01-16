@@ -97,3 +97,34 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s1.__str__(), "[Square] (89) 12/1 - 7")
         s1.update(x=1, size=7, id=89, y=1)
         self.assertEqual(s1.__str__(), "[Square] (89) 1/1 - 7")
+
+    def test_to_dictionary(self):
+        """Test to_dictionary method"""
+        s1 = Square(10, 2, 1)
+        self.assertEqual(s1.to_dictionary(), {
+            "id": 78,
+            "size": 10,
+            "x": 2,
+            "y": 1
+        })
+        s2 = Square(1, 1)
+        self.assertEqual(s2.to_dictionary(), {
+            "id": 79,
+            "size": 1,
+            "x": 1,
+            "y": 0
+        })
+        s3 = Square(10, 0, 0, 12)
+        self.assertEqual(s3.to_dictionary(), {
+            "id": 12,
+            "size": 10,
+            "x": 0,
+            "y": 0
+        })
+        s4 = Square(10, 3, 4, 0)
+        self.assertEqual(s4.to_dictionary(), {
+            "id": 0,
+            "size": 10,
+            "x": 3,
+            "y": 4
+        })
