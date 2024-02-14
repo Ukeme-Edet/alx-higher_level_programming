@@ -1,6 +1,7 @@
--- A script that lists the number of records with the same score in the table `second_table` of the database `hbtn_0d_0`
+-- Lists the number of records with the same score in the table second_table.
+-- Records are ordered by descending count.
 SELECT `score`,
-	AVG(`score`)
+	COUNT(*) AS `number`
 FROM `second_table`
 GROUP BY `score`
-ORDER BY `score` DESC;
+ORDER BY `number` DESC;
