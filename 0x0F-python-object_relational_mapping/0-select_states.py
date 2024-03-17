@@ -2,6 +2,7 @@
 
 
 def main(username, password, dbname):
+    """Connect to a MySQL server and list all states in the database"""
     import MySQLdb
     port = 3306
     conn = MySQLdb.connect(
