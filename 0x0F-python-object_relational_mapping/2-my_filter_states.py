@@ -25,7 +25,8 @@ def main():
     )
     cur = conn.cursor()
     cur.execute(
-        "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id ASC".format(
+        "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id ASC"
+        .format(
             args[4]
         )
     )
