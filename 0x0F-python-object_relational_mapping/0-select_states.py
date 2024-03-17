@@ -24,7 +24,7 @@ def main(username, password, dbname):
 if __name__ == "__main__":
     import sys
     args = sys.argv
-    mysql_username = args[0]
-    mysql_password = args[1]
-    database_name = args[2]
+    mysql_username = args[1]
+    mysql_password = args[2]
+    database_name = args[3]
     main(mysql_username, mysql_password, database_name)
