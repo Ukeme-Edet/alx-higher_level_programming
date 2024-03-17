@@ -5,6 +5,7 @@ Write a script that lists all cities from the database hbtn_0e_4_usa.
 
 
 def main():
+    """List all cities from the database hbtn_0e_4_usa."""
     import MySQLdb
     from sys import argv
 
