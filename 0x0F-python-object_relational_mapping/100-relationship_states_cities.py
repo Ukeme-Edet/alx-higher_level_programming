@@ -14,6 +14,7 @@ def main():
     from relationship_city import City
     from sqlalchemy import create_engine
     from sqlalchemy.orm import sessionmaker
+    from sqlalchemy.schema import Table
 
     engine = create_engine(
         "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
