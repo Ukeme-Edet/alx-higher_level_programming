@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-A script that lists all `State` objects from the database `hbtn_0e_6_usa`
+A script that prints the first `State` object from the database `hbtn_0e_6_usa`
 """
 
 
@@ -24,9 +24,8 @@ def main():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for state in session.query(State).order_by(State.id).all():
-        print("{}: {}".format(state.id, state.name))
-    session.close()
+    state = session.query(State).order_by(State.id).first()
+    print("{}: {}".format(state.id, state.name))
 
 
 if __name__ == "__main__":
