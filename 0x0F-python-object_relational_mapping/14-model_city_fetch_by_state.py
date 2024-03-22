@@ -9,7 +9,7 @@ def main():
     Main function for the script
     """
     from sys import argv
-    from model_city import Base, City
+    from model_city import City
     from model_state import State
     from sqlalchemy import create_engine
     from sqlalchemy.orm import sessionmaker
@@ -20,7 +20,6 @@ def main():
         ),
         pool_pre_ping=True,
     )
-    Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
     session = Session()
@@ -29,7 +28,6 @@ def main():
         session.query(City, State)
         .filter(City.state_id == State.id)
         .order_by(City.id)
-        .all()
     ):
         print("{}: ({}) {}".format(state.name, city.id, city.name))
 
