@@ -9,9 +9,10 @@ def main():
     Main function for the script
     """
     from sys import argv
-    from relationship_city import Base, City
+    from relationship_state import Base
+    from relationship_city import City
     from sqlalchemy import create_engine
-    from sqlalchemy.orm import sessionmaker
+    from sqlalchemy.orm import Session
 
     engine = create_engine(
         "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
@@ -21,12 +22,9 @@ def main():
     )
     Base.metadata.create_all(engine)
 
-    Session = sessionmaker(bind=engine)
-    session = Session()
-
-    for city in session.query(City).order_by(City.id):
+    session = Session(engine)
+    for city in session.query(City).order_by(City.id).all():
         print("{}: {} -> {}".format(city.id, city.name, city.state.name))
-
     session.close()
 
 
