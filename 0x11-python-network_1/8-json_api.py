@@ -28,7 +28,7 @@ def main():
             print("[{}] {}".format(json.get("id"), json.get("name")))
         else:
             print("No result")
-    except JSONDecodeError:
+    except ValueError:
         print("Not a valid JSON")
 
 
