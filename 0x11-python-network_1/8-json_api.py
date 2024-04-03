@@ -9,6 +9,10 @@ from json import JSONDecodeError
 
 
 def main():
+    """
+    Main function for the script
+    """
+
     import requests
     from sys import argv
 
