@@ -5,9 +5,6 @@ http://0.0.0.0:5000/search_user with the letter as a parameter.
 """
 
 
-from json import JSONDecodeError
-
-
 def main():
     """
     Main function for the script
