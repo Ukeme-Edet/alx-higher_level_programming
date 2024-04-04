@@ -17,11 +17,17 @@ def main():
     r = requests.get(url)
     commits = r.json()
 
-    try:
-        for i in range(10):
-            print(commits[i])
-    except IndexError:
-        pass
+    print(commits)
+    # try:
+    #     for i in range(10):
+    #         print(
+    #             "{}: {}".format(
+    #                 commits[i].get("sha"),
+    #                 commits[i].get("commit").get("author").get("name")
+    #             )
+    #         )
+    # except IndexError:
+    #     pass
 
 
 if __name__ == "__main__":
