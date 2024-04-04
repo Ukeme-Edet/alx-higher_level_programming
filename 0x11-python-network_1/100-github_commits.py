@@ -20,10 +20,13 @@ def main():
     r = requests.get(url)
 
     json = r.json()
-    for commit in json[:10]:
-        sha = commit.get("sha")
-        author = commit.get("commit").get("author").get("name")
-        print("{}: {}".format(sha, author))
+    for i in range(10):
+        try:
+            commit = json[i].get("commit")
+            author = commit.get("author")
+            print("{}: {}".format(json[i].get("sha"), author.get("name")))
+        except IndexError:
+            break
 
 
 if __name__ == "__main__":
