@@ -21,10 +21,9 @@ def main():
 
     json = r.json()
     for commit in json[:10]:
-        commit = commit.get("commit")
-        author = commit.get("author")
-        sha = commit.get("tree").get("sha")
-        print("{}: {}".format(sha, author.get("name")))
+        sha = commit.get("sha")
+        author = commit.get("commit").get("author").get("name")
+        print("{}: {}".format(sha, author))
 
 
 if __name__ == "__main__":
