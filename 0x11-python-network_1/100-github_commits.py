@@ -17,7 +17,7 @@ def main():
     r = requests.get(url)
     commits = r.json()
 
-    print(username, repo, commits)
+    print(f"User: {username}", f"Repo: {repo}", commits)
     # try:
     #     for i in range(10):
     #         print(
