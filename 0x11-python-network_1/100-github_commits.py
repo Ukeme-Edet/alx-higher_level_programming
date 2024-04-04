@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-Python script that takes a Github repository and user credentials (username and
-password) and uses the Github API to display the last 10 commits
+"""Python script that takes 2 arguments in order to solve this challenge.
 """
 
 
@@ -13,20 +11,19 @@ def main():
     import requests
     from sys import argv
 
-    username = argv[1]
-    repo = argv[2]
-
+    username, repo = argv[1], argv[2]
     url = "https://api.github.com/repos/{}/{}/commits".format(username, repo)
-    r = requests.get(url)
 
-    json = r.json()
-    for i in range(10):
-        try:
-            commit = json[i].get("commit")
-            author = commit.get("author")
-            print("{}: {}".format(json[i].get("sha"), author.get("name")))
-        except IndexError:
-            break
+    r = requests.get(url)
+    commits = r.json()
+
+    try:
+        for i in range(10):
+            print("{}: {}".format(
+                commits[i].get("sha"),
+                commits[i].get("commit").get("author").get("name")))
+    except IndexError:
+        pass
 
 
 if __name__ == "__main__":
